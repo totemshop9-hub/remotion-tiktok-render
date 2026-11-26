@@ -284,11 +284,21 @@ const EndCard: React.FC<{config: ProductConfig}> = ({config}) => {
   const {fps} = useVideoConfig();
   const s = spring({frame, fps, config: {damping: 12, mass: 0.8, stiffness: 100}});
   const zoom = 1.05 + 0.05 * clamp(frame / 80);
+  const photoScene = config.scenes.find((x) => x.kind === 'photo');
+  const videoScene = config.scenes.find((x) => x.kind === 'video');
   return (
     <AbsoluteFill style={{overflow: 'hidden'}}>
-      <AbsoluteFill style={{transform: `scale(${zoom})`}}>
-        <Img src={config.scenes.find((x) => x.kind === 'photo')!.src} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-      </AbsoluteFill>
+      {photoScene ? (
+        <AbsoluteFill style={{transform: `scale(${zoom})`}}>
+          <Img src={resolveSrc(photoScene.src)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        </AbsoluteFill>
+      ) : videoScene ? (
+        <AbsoluteFill style={{transform: `scale(${zoom})`}}>
+          <OffthreadVideo src={resolveSrc(videoScene.src)} muted startFrom={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        </AbsoluteFill>
+      ) : (
+        <AbsoluteFill style={{background: `linear-gradient(160deg, ${config.accentA} 0%, #05060f 72%)`}} />
+      )}
       <AbsoluteFill style={{background: 'linear-gradient(to top, rgba(5,6,15,0.95) 8%, rgba(5,6,15,0.55) 45%, rgba(5,6,15,0.25) 100%)'}} />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', paddingBottom: 120}}>
         <div style={{textAlign: 'center', transform: `scale(${0.7 + 0.3 * s})`, opacity: clamp(s * 1.4)}}>

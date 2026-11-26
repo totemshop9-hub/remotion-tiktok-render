@@ -1,0 +1,48 @@
+name: render-products-01-03
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install headless Chrome for Remotion
+        run: npx remotion browser install chrome-headless-shell
+
+      - name: Render 01-tumbler
+        run: |
+          npx remotion render src/index.ts 01-tumbler out/final_01_tumbler.mp4 --concurrency=2 \
+            || npx remotion render src/index.ts 01-tumbler out/final_01_tumbler.mp4 --concurrency=2 --browser-executable=/usr/bin/google-chrome
+
+      - name: Render 02-knee-support
+        run: |
+          npx remotion render src/index.ts 02-knee-support out/final_02_knee_support.mp4 --concurrency=2 \
+            || npx remotion render src/index.ts 02-knee-support out/final_02_knee_support.mp4 --concurrency=2 --browser-executable=/usr/bin/google-chrome
+
+      - name: Render 03-lampu-aurora
+        run: |
+          npx remotion render src/index.ts 03-lampu-aurora out/final_03_lampu_aurora.mp4 --concurrency=2 \
+            || npx remotion render src/index.ts 03-lampu-aurora out/final_03_lampu_aurora.mp4 --concurrency=2 --browser-executable=/usr/bin/google-chrome
+
+      - name: Upload rendered videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-videos
+          path: out/
+          if-no-files-found: error

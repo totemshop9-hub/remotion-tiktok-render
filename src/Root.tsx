@@ -13,10 +13,10 @@ const tumbler: ProductConfig = {
   accentA: '#1e3a8a',
   accentB: '#06b6d4',
   scenes: [
-    {kind: 'photo', src: 'products/tumbler.jpg', move: 'zoomIn', headline: 'Tumbler murahan bikin minuman hangat', sub: 'padahal baru beli', anim: 'slideUp'},
-    {kind: 'photo', src: 'products/tumbler.jpg', move: 'panLR', headline: 'Stainless viral tahan dingin 12 jam', sub: 'anti bocor, dibalik pun aman', anim: 'scalePop'},
-    {kind: 'photo', src: 'products/tumbler.jpg', move: 'zoomOut', headline: 'Muat cup holder mobil', sub: 'praktis dibawa ke mana aja', anim: 'slideLeft'},
-    {kind: 'photo', src: 'products/tumbler.jpg', move: 'panRL', headline: 'Rp75rb di TikTok Shop', sub: 'cek keranjang kuning', anim: 'colorPop'},
+    {kind: 'video', src: 'video/tumbler_clip1.mp4', fromSec: 0, move: 'zoomIn', headline: 'Tumbler murahan bikin minuman hangat', sub: 'padahal baru beli', anim: 'slideUp'},
+    {kind: 'video', src: 'video/tumbler_clip1.mp4', fromSec: 12, move: 'panLR', headline: 'Stainless viral tahan dingin 12 jam', sub: 'anti bocor, dibalik pun aman', anim: 'scalePop'},
+    {kind: 'video', src: 'video/tumbler_clip1.mp4', fromSec: 30, move: 'zoomOut', headline: 'Muat cup holder mobil', sub: 'praktis dibawa ke mana aja', anim: 'slideLeft'},
+    {kind: 'video', src: 'video/tumbler_clip1.mp4', fromSec: 42, move: 'rotate', headline: 'Rp75rb di TikTok Shop', sub: 'cek keranjang kuning', anim: 'colorPop'},
   ],
 };
 
@@ -29,10 +29,10 @@ const knee: ProductConfig = {
   accentA: '#7c2d12',
   accentB: '#f97316',
   scenes: [
-    {kind: 'photo', src: 'products/knee.jpg', move: 'zoomIn', headline: 'Lutut bunyi krek krek pas naik tangga', sub: 'relate banget', anim: 'slideUp'},
-    {kind: 'photo', src: 'products/knee.jpg', move: 'panLR', headline: 'Pelindung lutut elastis breathable', sub: 'tidak melorot', anim: 'scalePop'},
-    {kind: 'photo', src: 'products/knee.jpg', move: 'zoomOut', headline: 'Buat lari, gym, badminton', sub: 'nyaman dipakai', anim: 'slideLeft'},
-    {kind: 'photo', src: 'products/knee.jpg', move: 'panRL', headline: 'Rp61.275 di TikTok Shop', sub: 'cek keranjang kuning', anim: 'typewriter'},
+    {kind: 'video', src: 'video/knee_clip1.mp4', fromSec: 0, move: 'zoomIn', headline: 'Lutut bunyi krek krek pas naik tangga', sub: 'relate banget', anim: 'slideUp'},
+    {kind: 'video', src: 'video/knee_clip1.mp4', fromSec: 6, move: 'panLR', headline: 'Pelindung lutut elastis breathable', sub: 'tidak melorot', anim: 'scalePop'},
+    {kind: 'video', src: 'video/knee_clip1.mp4', fromSec: 14, move: 'zoomOut', headline: 'Buat lari, gym, badminton', sub: 'nyaman dipakai', anim: 'slideLeft'},
+    {kind: 'video', src: 'video/knee_clip1.mp4', fromSec: 24, move: 'rotate', headline: 'Rp61.275 di TikTok Shop', sub: 'cek keranjang kuning', anim: 'typewriter'},
   ],
 };
 
@@ -45,10 +45,10 @@ const aurora: ProductConfig = {
   accentA: '#4c1d95',
   accentB: '#a855f7',
   scenes: [
-    {kind: 'video', src: 'video/aurora_clip1.mp4', move: 'zoomIn', headline: 'Susah tidur kamar gelap banget', sub: 'ngakak', anim: 'slideUp'},
-    {kind: 'photo', src: 'products/aurora.jpg', move: 'panLR', headline: 'Lampu proyektor aurora', sub: 'kamar jadi langit berbintang', anim: 'scalePop'},
-    {kind: 'video', src: 'video/aurora_clip2.mp4', move: 'rotate', headline: 'Menenangkan buat tidur', sub: 'bagus buat kamar anak', anim: 'slideLeft'},
-    {kind: 'photo', src: 'products/aurora.jpg', move: 'zoomOut', headline: 'Rp75.539 di TikTok Shop', sub: 'cek keranjang kuning', anim: 'colorPop'},
+    {kind: 'video', src: 'video/aurora_clip1.mp4', fromSec: 0, move: 'zoomIn', headline: 'Susah tidur kamar gelap banget', sub: 'ngakak', anim: 'slideUp'},
+    {kind: 'video', src: 'video/aurora_clip2.mp4', fromSec: 0, move: 'panLR', headline: 'Lampu proyektor aurora', sub: 'kamar jadi langit berbintang', anim: 'scalePop'},
+    {kind: 'video', src: 'video/aurora_clip1.mp4', fromSec: 15, move: 'rotate', headline: 'Menenangkan buat tidur', sub: 'bagus buat kamar anak', anim: 'slideLeft'},
+    {kind: 'video', src: 'video/aurora_clip2.mp4', fromSec: 18, move: 'zoomOut', headline: 'Rp75.539 di TikTok Shop', sub: 'cek keranjang kuning', anim: 'colorPop'},
   ],
 };
 
